@@ -1,6 +1,5 @@
 #!/bin/bash
-# $1 new version defaults to 2.1.4
-#
+# Automation script to create specs to build cc-oci-runtime.
 # TODO
 # Create an OBS Clear-Builder user to update cc-oci-runtime
 AUTHOR=${AUTHOR:-$(git config user.name)}
