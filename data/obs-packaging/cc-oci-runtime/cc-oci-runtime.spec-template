@@ -3,6 +3,7 @@ Name:      cc-oci-runtime
 Version:   @VERSION@
 Release:   0
 Source0:   %{name}-%{version}.tar.gz
+Source1:   http://ftp.wayne.edu/gnu/autoconf-archive/autoconf-archive-2017.03.21.tar.xz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Summary  : No detailed summary available
 Group    : Development/Tools
@@ -89,6 +90,8 @@ extras components for the cc-oci-runtime package.
 
 %build
 export LANG=C
+tar xf %{Source1}
+ln -s $(pwd)/autoconf-archive-2017.03.21/m4 m4
 sh ./autogen.sh --disable-static --enable-valgrind \
 --disable-cppcheck \
 --disable-tests \
